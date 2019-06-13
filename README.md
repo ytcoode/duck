@@ -15,4 +15,4 @@ On the machine where your local servers are running, run:
 ./duck -addr DUCK_SERVER_IP:9990 -p test_password <local server port> <local server port> ...
 ```
 
-Now you can connect to the public duck server and the tcp traffic will be forwarded to your specific local server according to port.
+Now you can connect to the public duck server and the tcp traffic will be forwarded to your specific local server according to the port.

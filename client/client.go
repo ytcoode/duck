@@ -6,24 +6,27 @@ import (
 	"net"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/wangyuntao/duck/protocol"
 	"github.com/wangyuntao/duck/util"
 )
 
 func Start(serverAddr string, ports []uint16, passwd string) {
-	ch := make(chan int)
 	for _, port := range ports {
-		go start(serverAddr, port, []byte(passwd), ch)
+		go start(serverAddr, port, []byte(passwd))
 	}
-	for i := 0; i < len(ports); i++ {
-		<-ch
+
+	for {
+		// Better idea?
+		time.Sleep(time.Hour)
 	}
 }
 
-func start(serverAddr string, port uint16, passwd []byte, ch chan int) {
+func start(serverAddr string, port uint16, passwd []byte) {
 	defer func() {
-		ch <- 1
+		time.Sleep(time.Second)
+		go start(serverAddr, port, passwd)
 	}()
 
 	conn, err := net.Dial("tcp", serverAddr)
