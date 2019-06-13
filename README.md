@@ -1,18 +1,18 @@
 # duck
-Expose local services to the Internet
+Expose local servers behind NAT or firewall to the Internet
 
 ## Usage
 
-On a machine with a public IP, run:
+On a publicly accessible machine, run:
 
 ```
 ./duck -l -addr :9990 -p test_password
 ```
 
-on your local machine, run:
+On the machine where your local servers are running, run:
 
 ```
-./duck -addr YOUR_SERVER_IP:9990 -p test_password <local service port> <local service port> ...
+./duck -addr DUCK_SERVER_IP:9990 -p test_password <local server port> <local server port> ...
 ```
 
-Now you can connect to the duck server and the tcp data will be forwarded to your local server. 
+Now you can connect to the public duck server and the tcp traffic will be forwarded to your specific local server according to port.
