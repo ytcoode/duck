@@ -7,7 +7,7 @@ On a machine with a public IP, run:
 
 ```
 ./duck -l -addr :9990 -p test_password
-``
+```
 
 on your local machine, run:
 
