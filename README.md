@@ -1,3 +1,6 @@
+**Deprecated, use https://github.com/wangyuntao/portal instead.**
+
+
 # duck
 Expose local servers behind NAT or firewall to the Internet
 
